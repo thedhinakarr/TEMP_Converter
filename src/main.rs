@@ -1,19 +1,30 @@
 
-// Celcius to farenheit and vice versa:
+// Celcius to farenheits and vice versa:
 
 
 // c/5=(F-32)/9
 
+use std::io;
 
 fn main() {
     
     //calling functions
+    let mut temp = String::new();
+    println!("CELCIUS TO FARENHEIT CONVERTERRRRRRRRRR");
+    println!("---------------------------------------");
+    println!("Enter Temperature in celcius: ");
+    println!("---------------------------------------");
+    io::stdin()
+        .read_line(&mut temp)
+        .expect("Failed to read line");
     
-    let farenh:f32 = c_to_f(100.00);
+    let temp:f32 = temp.trim().parse().expect("Enter a valid temperature");
+
+    let farenh:f32 = c_to_f(temp);
     let cel:f32 = f_to_c(farenh);
 
-    println!("{}F",farenh);
-    println!("{}C",cel);
+    println!("IN FARENHEIT---> {}F",farenh);
+    println!("IN CELCIUS---> {}C",cel);
     
 
 }
